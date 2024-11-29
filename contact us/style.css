@@ -1,0 +1,77 @@
+/* Body and General Styling */
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contact Us Container */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Heading */
+.contact-container h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+/* Contact Item */
+.contact-item {
+    margin-bottom: 20px;
+}
+
+/* Contact Button */
+.contact-button {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+/* WhatsApp Button */
+.contact-button.whatsapp {
+    background-color: #25d366;
+}
+
+.contact-button.whatsapp:hover {
+    background-color: #128c7e;
+}
+
+/* Gmail Button */
+.contact-button.gmail {
+    background-color: #d14836;
+}
+
+.contact-button.gmail:hover {
+    background-color: #c1351d;
+}
+
+/* Icons */
+.contact-button i {
+    font-size: 24px;
+    margin-right: 10px;
+}
