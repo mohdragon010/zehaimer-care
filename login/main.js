@@ -26,10 +26,13 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     }
 
     if (isValid) {
+        // Store login status in localStorage
+        localStorage.setItem('isLoggedIn', 'true');
         // Redirect to the desired path
         window.location.href = 'main page/main.html';
     }
 });
+
 document.getElementById('togglePassword').addEventListener('click', function () {
     const passwordInput = document.getElementById('password');
     const isPassword = passwordInput.type === 'password';
@@ -40,11 +43,4 @@ document.getElementById('togglePassword').addEventListener('click', function () 
     // Toggle the icon class
     this.classList.toggle('fa-eye');
     this.classList.toggle('fa-eye-slash');
-});
-    if (isValid) {
-        // Store login status in localStorage
-        localStorage.setItem('isLoggedIn', 'true');
-        // Redirect to the main page
-        window.location.href = 'main page/main.html';
-    }
 });
