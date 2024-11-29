@@ -1,64 +1,97 @@
-*{
+/* General reset for margin and padding */
+* {
+    margin: 0;
     padding: 0;
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
 }
+
+/* Body and overall page style */
 body {
-    margin: 0;
+    background-color: #121212; /* Dark background */
     font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #fff;
 }
 
-
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color:#00bcd4;
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
+/* Container styling */
 .container {
     background-color: #1e1e1e;
-    padding: 20px 20px 20px 20px; /* 50px padding on the right */
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
 }
 
+/* Heading styling */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e0e0e0; /* Light gray for the heading */
+}
+
+/* Input group styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Input field styling */
 input {
-    width: calc(100% - 20px); /* Reduce width to account for padding */
-    padding: 10px;
-    border: none;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #444;
     border-radius: 5px;
     background-color: #2c2c2c;
     color: #fff;
+    font-size: 16px;
     outline: none;
 }
 
-input::placeholder {
+input:focus {
+    border-color: #00bcd4; /* Focus effect with cyan color */
+}
+
+/* Error message styling */
+.error {
+    display: none;
+    color: #ff4d4d; /* Red color for errors */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Password wrapper to handle eye icon */
+.password-wrapper {
+    position: relative;
+}
+
+/* Eye icon for show/hide password */
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
     color: #888;
 }
 
+/* Button styling */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    background-color: #00bcd4;
     border: none;
     border-radius: 5px;
-    background-color:#00bbd496;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -66,34 +99,13 @@ button {
 }
 
 button:hover {
-    background-color: #00bcd4;
+    background-color: #008ba3; /* Darker cyan for hover effect */
 }
 
-.error {
-    font-size: 12px;
-    color: #f44336;
-    margin-top: 5px;
-    display: none;
-}
-.password-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-#password {
-    width: 100%;
-    padding-right: 35px; /* Add space for the eye icon */
-}
-
-#togglePassword {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-#togglePassword:active {
-    transform: scale(1.1); /* Subtle scaling effect */
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
 }
