@@ -45,6 +45,6 @@ document.getElementById('togglePassword').addEventListener('click', function () 
         // Store login status in localStorage
         localStorage.setItem('isLoggedIn', 'true');
         // Redirect to the main page
-        window.location.href = 'main page/index.html';
+        window.location.href = 'main page/main.html';
     }
 });
