@@ -55,16 +55,49 @@
         </div>
 
         <div class="connect-item">
-            <a href="#" class="contact-button bluetooth">
+            <a href="#" id="bluetoothButton" class="contact-button bluetooth">
                 <i class="fa-brands fa-bluetooth-b"></i> Connect by Bluetooth
             </a>
         </div>
 
         <div class="connect-item">
-            <a href="#" class="contact-button wifi">
+            <a href="#" id="wifiButton" class="contact-button wifi">
                 <i class="fas fa-wifi"></i> Connect by WiFi
             </a>
         </div>
     </div>
+
+    <script>
+        // Open Bluetooth Settings
+        document.getElementById("bluetoothButton").addEventListener("click", function() {
+            if (navigator.bluetooth) {
+                navigator.bluetooth.requestDevice({ acceptAllDevices: true })
+                    .then(device => {
+                        console.log("Connected to Bluetooth device:", device);
+                    })
+                    .catch(error => {
+                        console.error("Error accessing Bluetooth:", error);
+                        alert("Unable to connect to Bluetooth. Please check your device's Bluetooth settings.");
+                    });
+            } else {
+                alert("Bluetooth is not supported in this browser or platform. Please open Bluetooth settings manually.");
+            }
+        });
+    
+        // Open WiFi Settings
+        document.getElementById("wifiButton").addEventListener("click", function() {
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isMobile) {
+                if (/Android/i.test(navigator.userAgent)) {
+                    window.location.href = "intent:#Intent;action=android.net.wifi.PICK_WIFI_NETWORK;end";
+                } else {
+                    alert("Please open WiFi settings manually on iOS.");
+                }
+            } else {
+                alert("Please open WiFi settings manually from your system settings.");
+            }
+        });
+    </script>
+    
 </body>
 </html>
